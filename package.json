@@ -10,7 +10,9 @@
     "up": "bower i && yarn",
     "webpack:dev-server": "node_modules/.bin/webpack-dev-server --config webpack.config.js --watch",
     "storybook": "start-storybook -p 3001 -c .storybook",
-    "test": "jest --watch"
+    "test": "npm run test:watch",
+    "test:once": "jest",
+    "test:watch": "jest --watchAll"
   },
   "author": "Phil Willis <pdotwdot@gmail.com> (http://www.philwillis.pw/)",
   "license": "ISC",
