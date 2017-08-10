@@ -20,3 +20,72 @@ storiesOf('HelloWorld', module)
       return (<HelloWorld message={name} />)
     })
   );
+
+
+
+// import RaisedButton from 'material-ui/RaisedButton';
+// storiesOf('Materialize-UI', module)
+//   .addDecorator(withKnobs)
+//   .add('Button',
+//     withInfo('')(() => {
+
+//       const style = {
+//         margin: 12,
+//       };
+
+
+
+//       return (
+//         <div>
+//           <RaisedButton label="Default" style={style} />
+//           <RaisedButton label="Primary" primary={true} style={style} />
+//           <RaisedButton label="Secondary" secondary={true} style={style} />
+//           <RaisedButton label="Disabled" disabled={true} style={style} />
+//           <br />
+//           <br />
+//           <RaisedButton label="Full width" fullWidth={true} />
+//         </div>
+//       );
+
+//     }));
+
+
+import MaterializeButtons from '../src/components/MaterializeButtons.jsx';
+import MaterializeButton from '../src/components/MaterializeButton.jsx';
+import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
+storiesOf('Materialize-UI', module)
+  .addDecorator(withKnobs)
+  .add('Buttons',
+    withInfo('')(() => {
+
+      const style = {
+        margin: 12,
+      };
+
+      return (
+        <MuiThemeProvider>
+          <MaterializeButtons  />
+        </MuiThemeProvider>
+      );
+    })
+  )
+  .addDecorator(withKnobs)
+  .add('Button',
+    withInfo('')(() => {
+
+      const style = {
+        margin: 12,
+      };
+
+      return (
+        <div>
+          <MuiThemeProvider>
+            <MaterializeButton  />
+          </MuiThemeProvider>
+          <MuiThemeProvider>
+            <MaterializeButton primaryVal='true' label='Primary' />
+          </MuiThemeProvider>
+        </div>
+      );
+    })
+  );
