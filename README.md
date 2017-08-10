@@ -14,3 +14,7 @@
 ## Addons
 - [list of addons](https://storybook.js.org/addons/addon-gallery/)
 
+
+## Jest
+- [Intro](https://www.sitepoint.com/test-react-components-jest/)
+
