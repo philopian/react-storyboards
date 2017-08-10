@@ -5,7 +5,10 @@
   ~~~
     $ npm start -s
   ~~~
-
+- Component Docs
+  ~~~
+    $ npm run storybook -s
+  ~~~
 
 
 ## Addons
