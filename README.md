@@ -9,5 +9,5 @@
 
 
 ## Addons
-- [Knobs](https://github.com/storybooks/storybook/tree/master/addons/knobs)
+- [list of addons](https://storybook.js.org/addons/addon-gallery/)
 
