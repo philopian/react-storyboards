@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "prestart": "npm-run-all security-check up",
+    "prestart": "npm-run-all security-check",
     "start": "npm run webpack:dev-server",
     "security-check": "nsp check",
     "up": "bower i && yarn",
@@ -16,12 +16,17 @@
     "babel-core": "^6.25.0",
     "babel-loader": "^7.1.1",
     "babel-preset-env": "^1.6.0",
+    "babel-preset-react": "^6.24.1",
     "css-loader": "^0.28.4",
     "node-sass": "^4.5.3",
     "npm-run-all": "^4.0.2",
     "nsp": "^2.7.0",
+    "prop-types": "^15.5.10",
+    "react": "^15.6.1",
+    "react-dom": "^15.6.1",
     "sass-loader": "^6.0.6",
     "style-loader": "^0.18.2",
+    "styled-components": "^2.1.2",
     "webpack": "^3.5.2",
     "webpack-dev-server": "^2.7.1"
   }
