@@ -1,0 +1,15 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`HelloWorld (Snapshot) HelloWorld renders hello world 1`] = `
+<div
+  className="sc-bdVaJa jZmybB"
+>
+  <span
+    className="sc-bwzfXH cciKmt"
+  >
+    Hello 
+  </span>
+   
+  world
+</div>
+`;

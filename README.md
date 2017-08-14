@@ -17,4 +17,4 @@
 
 ## Jest
 - [Intro](https://www.sitepoint.com/test-react-components-jest/)
-
+- [Enzyme](http://airbnb.io/enzyme/docs/api/index.html)
