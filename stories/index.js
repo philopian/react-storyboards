@@ -5,8 +5,24 @@ import { withInfo } from '@storybook/addon-info';
 import { withKnobs, text, boolean, number } from '@storybook/addon-knobs';
 
 
+
+
+/* 
+import YOUR_COMPONENT from '../src/components/YOUR_COMPONENT.jsx';
+storiesOf('HEADER_TITLE', module)
+  .addDecorator(withKnobs)
+  .add('SUB_TITLE',
+    withInfo('')(() =>
+      <YOUR_COMPONENT />
+    )
+  );
+*/
+
+
+
+
 import HelloWorld from '../src/components/HelloWorld.jsx';
-storiesOf('HelloWorld', module)
+storiesOf('Hello World', module)
   .addDecorator(withKnobs)
   .add('Default',
     withInfo('')(() =>
@@ -23,36 +39,17 @@ storiesOf('HelloWorld', module)
 
 
 
-// import RaisedButton from 'material-ui/RaisedButton';
-// storiesOf('Materialize-UI', module)
-//   .addDecorator(withKnobs)
-//   .add('Button',
-//     withInfo('')(() => {
-
-//       const style = {
-//         margin: 12,
-//       };
 
 
 
-//       return (
-//         <div>
-//           <RaisedButton label="Default" style={style} />
-//           <RaisedButton label="Primary" primary={true} style={style} />
-//           <RaisedButton label="Secondary" secondary={true} style={style} />
-//           <RaisedButton label="Disabled" disabled={true} style={style} />
-//           <br />
-//           <br />
-//           <RaisedButton label="Full width" fullWidth={true} />
-//         </div>
-//       );
-
-//     }));
 
 
+
+
+
+import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import MaterializeButtons from '../src/components/MaterializeButtons.jsx';
 import MaterializeButton from '../src/components/MaterializeButton.jsx';
-import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 storiesOf('Materialize-UI', module)
   .addDecorator(withKnobs)
   .add('Buttons',
@@ -64,8 +61,8 @@ storiesOf('Materialize-UI', module)
 
       return (
         <MuiThemeProvider>
-          <MaterializeButtons  />
-        </MuiThemeProvider>
+        <MaterializeButtons  />
+      </MuiThemeProvider>
       );
     })
   )
@@ -83,9 +80,23 @@ storiesOf('Materialize-UI', module)
             <MaterializeButton  />
           </MuiThemeProvider>
           <MuiThemeProvider>
-            <MaterializeButton primaryVal='true' label='Primary' />
+            <MaterializeButton primaryVal={true} label='Primary' onTouchTap={ action('button-click') }/>
           </MuiThemeProvider>
         </div>
       );
     })
+  );
+
+
+
+
+
+
+import RotateIcon from '../src/components/RotateIcon.jsx';
+storiesOf('Simple Stateless', module)
+  .addDecorator(withKnobs)
+  .add('Animated Icon',
+    withInfo('')(() =>
+      <RotateIcon />
+    )
   );

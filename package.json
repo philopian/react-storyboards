@@ -9,7 +9,7 @@
     "security-check": "nsp check",
     "up": "bower i && yarn",
     "webpack:dev-server": "node_modules/.bin/webpack-dev-server --config webpack.config.js --watch",
-    "storybook": "start-storybook -p 3001 -c .storybook"
+    "storybook": "start-storybook -p 3001 -c .storybook "
   },
   "author": "Phil Willis <pdotwdot@gmail.com> (http://www.philwillis.pw/)",
   "license": "ISC",
@@ -22,6 +22,7 @@
     "babel-preset-env": "^1.6.0",
     "babel-preset-react": "^6.24.1",
     "css-loader": "^0.28.4",
+    "file-loader": "0.11.1",
     "material-ui": "^0.18.7",
     "node-sass": "^4.5.3",
     "npm-run-all": "^4.0.2",

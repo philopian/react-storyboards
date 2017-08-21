@@ -29,7 +29,8 @@ module.exports = {
     rules: [
       { test: /\.scss$/, use: [{ loader: "style-loader" }, { loader: "css-loader" }, { loader: "sass-loader" }] },
       { test: /\.js$/, exclude: /(node_modules|bower_components)/, use: { loader: 'babel-loader', options: { presets: ['env'] } } },
-      { test: /\.jsx$/, loader: 'babel-loader' },
+      { test: /\.jsx$/, include: path.join(__dirname, 'src/components'), loader: 'babel-loader' },
+      { test: /\.(jpg|jpeg|png|svg|gif)$/, include: /(images)/, loader: 'file-loader?name=[path][name].[ext]' },
     ]
   },
 

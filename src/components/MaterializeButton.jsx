@@ -8,13 +8,15 @@ const style = {
 
 function MaterializeButton({label, primaryVal}){
   return (
-      <RaisedButton label={label} primary={primaryVal} style={style} />
+      <RaisedButton label={label} primary={primaryVal} style={style}  />
   );
 }
 
 MaterializeButton.propTypes = {
   label: PropTypes.string,
   primaryVal: PropTypes.bool,
+  onClick: PropTypes.func,
+  onTouchTap: PropTypes.func,
 };
 MaterializeButton.defaultProps = {
   label: 'Button',
