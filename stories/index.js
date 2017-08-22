@@ -1,6 +1,7 @@
 import React from 'react';
 import { storiesOf, configure, setAddon } from '@storybook/react';
 import { action } from '@storybook/addon-actions';
+import { WithNotes } from '@storybook/addon-notes';
 import { withInfo } from '@storybook/addon-info';
 import { withKnobs, text, boolean, number } from '@storybook/addon-knobs';
 
@@ -13,29 +14,48 @@ storiesOf('HEADER_TITLE', module)
   .addDecorator(withKnobs)
   .add('SUB_TITLE',
     withInfo('')(() =>
-      <YOUR_COMPONENT />
-    )
+      <WithNotes notes={'Write a little something about this component!'}>
+        <YOUR_COMPONENT />
+      </WithNotes>
+    );
   );
 */
 
 
 
 
-import HelloWorld from '../src/components/HelloWorld.jsx';
+import SimpleBanner from '../src/components/SimpleBanner.jsx';
+import ReactBanner from '../src/components/ReactBanner.jsx';
 storiesOf('Hello World', module)
   .addDecorator(withKnobs)
-  .add('Default',
+  .add('SimpleBanner - default',
     withInfo('')(() =>
-      <HelloWorld />
+      <WithNotes notes={'This is a very simple react component with NO value passed into the prop.'}>
+        <SimpleBanner  />
+      </WithNotes>
     )
   )
   .addDecorator(withKnobs)
-  .add('Custom message',
+  .add('SimpleBanner - message',
     withInfo('')(() => {
       const name = text('Name', 'phil');
-      return (<HelloWorld message={name} />)
+      return (
+        <WithNotes notes={'This is a very simple react component with a value passed into the prop. You can edit the value in the "Knobs" section to see the live changes. '}>
+        <SimpleBanner message={name} />
+        </WithNotes>
+      );
     })
-  );
+  )
+  .addDecorator(withKnobs)
+  .add('ReactBanner',
+    withInfo('')(() =>
+      <WithNotes notes={'Here is a component with a button and a rotating image'}>
+        <ReactBanner onClick={ action('button-click') }/>
+      </WithNotes>
+    )
+  )
+
+;
 
 
 
@@ -85,18 +105,4 @@ storiesOf('Materialize-UI', module)
         </div>
       );
     })
-  );
-
-
-
-
-
-
-import RotateIcon from '../src/components/RotateIcon.jsx';
-storiesOf('Simple Stateless', module)
-  .addDecorator(withKnobs)
-  .add('Animated Icon',
-    withInfo('')(() =>
-      <RotateIcon />
-    )
   );

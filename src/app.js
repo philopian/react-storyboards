@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import HelloWorld from './components/HelloWorld.jsx';
+import HelloWorld from './components/ReactBanner.jsx';
 
 
 import './style.scss';
@@ -14,4 +14,4 @@ console.log('sdfsdf');
 
 
 
-ReactDOM.render(<HelloWorld />, document.getElementById('root'));
+ReactDOM.render(<ReactBanner />, document.getElementById('root'));

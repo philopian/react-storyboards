@@ -16,7 +16,7 @@ const Bold = styled.span`
 
 
 /** A super lame component that says Hello with a custom message. */
-function HelloWorld({message}) {
+function SimpleBanner({message}) {
   return (
   <Container>
     <Bold>Hello </Bold> {message}
@@ -24,13 +24,13 @@ function HelloWorld({message}) {
   )
 }
 
-HelloWorld.propTypes = {
+SimpleBanner.propTypes = {
   /** Message to display */
   message: PropTypes.string
 };
 
-HelloWorld.defaultProps = {
+SimpleBanner.defaultProps = {
   message: 'World'
 };
 
-export default HelloWorld;
+export default SimpleBanner;
