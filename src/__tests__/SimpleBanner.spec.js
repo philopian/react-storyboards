@@ -1,27 +1,109 @@
 import React from 'react';
+import 'jest-styled-components';
+import cheerio from 'cheerio';
 import { mount, shallow, render } from 'enzyme';
 import renderer from 'react-test-renderer';
 import SimpleBanner from '../components/SimpleBanner.jsx';
 
-// http://airbnb.io/enzyme/docs/api/index.html
+/* 
+ * styled-components doesn't seem to work 100% with enzyme, so i'm using cheerio to do jquery like navication.
+ * Anytime you use a styled-component to make a element enzyme doesn't recognize it as styled.div or the variable you gave it
+ */
+
+// ENZYME REF: // http://airbnb.io/enzyme/docs/api/index.html
+
+
 
 describe('SimpleBanner', () => {
   // Shallow rendering is useful to constrain yourself to testing a component as a unit, and to ensure that your tests aren't indirectly asserting on behavior of child components.
+  const props = { message: 'world' };
+
+
   test('Shallow Rendering', () => {
-    const props = { message: 'world' };
+    // that it renders something
     const wrapper = shallow(
       <SimpleBanner message={props.message} />
     );
-
-    // console.log(wrapper);
-    // console.log(wrapper.find('span').children().length);
-
     expect(wrapper.length).toEqual(1)
-
-    // const span = wrapper.find('span');
-    // expect(span.text()).toBe('Hello ');
-    // expect(wrapper.contains(<span>Hello </span>)).to.equal(true);
   });
+  test('Make sure there is an element with the class .TEST-TEST', () => {
+    const wrapper = shallow(
+      <SimpleBanner message={props.message} />
+    );
+    expect(
+      wrapper.find('.TEST-TEST').exists()
+    ).toBe(true);
+  });
+  test('Make sure there is a span element', () => {
+    const wrapper = shallow(
+      <SimpleBanner message={props.message} />
+    );
+    const $ = cheerio.load(wrapper.html());
+    expect($('span').length).toEqual(1);
+    expect($('span').text()).toContain('Hello');
+  });
+
+
+
+
+
+
+
+  // console.log(wrapper.html());
+  // console.log(wrapper.html().find('span'));
+  // console.log(wrapper.children().html());
+  // console.log(wrapper.renderer);
+
+
+  // console.log(wrapper.find('span').exists());
+  // console.log(wrapper.find('p').at(0).html());
+  // console.log(wrapper.find('styled.Bold').at(2).html());
+  // const Subtitle = styled.span ``;
+  // console.log(Subtitle.displayName);
+  // console.log(wrapper.find(Subtitle).html());
+
+
+
+  // console.log(wrapper.html().includes('hello'));
+  // console.log(wrapper.text());
+
+
+  // expect(
+  //   wrapper.find('span').exists()
+  // ).toBe(true);
+  // test('Has a <span> with the value "Hello"', () => {
+  //   const wrapper = shallow(
+  //     <SimpleBanner message={props.message} />
+  //   );
+
+  //   const x = wrapper.find('.TEST-TEST').exists();
+  //   console.log(x);
+
+  //   // console.log(wrapper);
+
+  //   // const x = wrapper.find('Bold').prop('message');
+
+
+
+  // });
+  test('if you pass in the "message" prop it will add it to the div');
+
+
+
+
+
+
+
+
+
+
+
+  // console.log(wrapper.find('span').at(0));
+  // console.log(wrapper);
+  // console.log(wrapper.find('span').children().length);
+  // const span = wrapper.find('span');
+  // expect(span.text()).toBe('Hello ');
+  // expect(wrapper.contains(<span>Hello </span>)).to.equal(true);
 });
 
 

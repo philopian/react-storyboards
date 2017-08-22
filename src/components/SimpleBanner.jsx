@@ -13,6 +13,10 @@ const Bold = styled.span`
     color: rgb(42, 125, 153);
     font-size: 1.5em;
 `;
+const TextArea = styled.div`
+color: rgb(42, 125, 153);
+font-size: 1.5em;
+`;
 
 
 /** A super lame component that says Hello with a custom message. */
@@ -20,6 +24,9 @@ function SimpleBanner({message}) {
   return (
   <Container>
     <Bold>Hello </Bold> {message}
+    <p className="TEST-TEST">this is a paragraph</p>
+    <p>paragraph 2 </p>
+    <TextArea>This is a text area</TextArea>
   </Container>
   )
 }

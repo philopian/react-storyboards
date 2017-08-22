@@ -1,15 +1,46 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`SimpleBanner (Snapshot) SimpleBanner renders hello world 1`] = `
+.c0 {
+  border: 2px solid rgb(42,125,153);
+  margin: 10px;
+  padding: 0px 10px;
+  background-color: rgb(236,236,236);
+  display: inline-block;
+}
+
+.c1 {
+  color: rgb(42,125,153);
+  font-size: 1.5em;
+}
+
+.c2 {
+  color: rgb(42,125,153);
+  font-size: 1.5em;
+}
+
 <div
-  className="sc-bdVaJa jZmybB"
+  className="c0"
 >
   <span
-    className="sc-bwzfXH cciKmt"
+    className="c1"
   >
     Hello 
   </span>
    
   world
+  <p
+    className="TEST-TEST"
+  >
+    this is a paragraph
+  </p>
+  <p>
+    paragraph 2 
+  </p>
+  <div
+    className="c2"
+  >
+    This is a text area
+  </div>
 </div>
 `;
