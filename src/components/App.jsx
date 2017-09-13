@@ -2,10 +2,10 @@ import React from 'react';
 import styled from 'styled-components';
 
 import SimpleBanner from './SimpleBanner.jsx';
+import ReactBanner from './ReactBanner.jsx';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
+import MaterializeButton from './MaterializeButton.jsx';
 import DialogExample from './DialogExample.jsx';
-
-// import App from './components/App.jsx';
 
 
 // Styles
@@ -19,7 +19,7 @@ const Container = styled.div`
 `;
 
 // React Component
-export default class ReactBanner extends React.Component {
+export default class App extends React.Component {
   constructor(props, context) {
     super(props, context);
 
@@ -29,16 +29,17 @@ export default class ReactBanner extends React.Component {
     return (
       <Container>
         <SimpleBanner></SimpleBanner>
-
-        <MuiThemeProvider>
-          <DialogExample />
-        </MuiThemeProvider>
-        <SimpleBanner></SimpleBanner>
-        <SimpleBanner></SimpleBanner>
-
-
-
+        <ReactBanner></ReactBanner>
       </Container>);
   }
 }
 
+
+
+
+/*
+<MuiThemeProvider>
+  <DialogExample />
+</MuiThemeProvider>     
+
+*/

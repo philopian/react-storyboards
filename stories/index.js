@@ -26,7 +26,13 @@ storiesOf('HEADER_TITLE', module)
 
 import SimpleBanner from '../src/components/SimpleBanner.jsx';
 import ReactBanner from '../src/components/ReactBanner.jsx';
-storiesOf('Hello World', module)
+import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
+import MaterializeButtons from '../src/components/MaterializeButtons.jsx';
+import MaterializeButton from '../src/components/MaterializeButton.jsx';
+
+
+
+storiesOf('Atoms', module)
   .addDecorator(withKnobs)
   .add('SimpleBanner - default',
     withInfo('')(() =>
@@ -54,23 +60,6 @@ storiesOf('Hello World', module)
       </WithNotes>
     )
   )
-
-;
-
-
-
-
-
-
-
-
-
-
-
-import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
-import MaterializeButtons from '../src/components/MaterializeButtons.jsx';
-import MaterializeButton from '../src/components/MaterializeButton.jsx';
-storiesOf('Materialize-UI', module)
   .addDecorator(withKnobs)
   .add('Buttons',
     withInfo('')(() => {
@@ -105,4 +94,9 @@ storiesOf('Materialize-UI', module)
         </div>
       );
     })
-  );
+  )
+
+
+
+
+;
