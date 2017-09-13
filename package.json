@@ -5,14 +5,15 @@
   "main": "index.js",
   "scripts": {
     "prestart": "npm-run-all security-check",
-    "start": "npm run webpack:dev-server",
+    "start": "npm-run-all --parallel webpack:dev-server test storybook open:browser",
     "security-check": "nsp check",
-    "up": "bower i && yarn",
+    "up": "bower i && npm i",
     "webpack:dev-server": "node_modules/.bin/webpack-dev-server --config webpack.config.js --watch",
     "storybook": "start-storybook -p 3001 -c .storybook",
     "test": "npm run test:watch",
     "test:once": "jest",
-    "test:watch": "jest --watchAll"
+    "test:watch": "jest --watchAll",
+    "open:browser": "node_modules/.bin/babel-node tools/open-browser"
   },
   "author": "Phil Willis <pdotwdot@gmail.com> (http://www.philwillis.pw/)",
   "license": "ISC",
@@ -47,5 +48,8 @@
     "webpack": "^3.5.2",
     "webpack-dev-server": "^2.7.1"
   },
-  "dependencies": {}
+  "dependencies": {
+    "babel-cli": "^6.26.0",
+    "open": "0.0.5"
+  }
 }
